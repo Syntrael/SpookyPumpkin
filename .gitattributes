@@ -1,0 +1,4 @@
+Library/Artifacts/f8/f8ec2fcf2745e4cc36ec5dfe83724878 filter=lfs diff=lfs merge=lfs -text
+*.7z filter=lfs diff=lfs merge=lfs -text
+*.tar.7z filter=lfs diff=lfs merge=lfs -text
+Library/PackageCache/com.unity.toolchain.win-x86_64-linux-x86_64@2.0.10/data~/payload.tar.7z filter=lfs diff=lfs merge=lfs -text
