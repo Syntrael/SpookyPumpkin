@@ -1,0 +1,46 @@
+﻿
+
+#pragma kernel CSMain
+
+int _Width, _Height;
+
+
+RWStructuredBuffer<float> _Result;
+RWTexture3D<float4> _Noise;
+
+SamplerState _PointRepeat;
+Texture2D _PermTable2D, _Gradient3D;
+
+[numthreads(8,8,8)]
+void CSMain (uint3 id : SV_DispatchThreadID)
+{
+	float3 uv = float3(id);
+	
+
+	//float n = 0;
+	//if(uv.x < _Width / 2 && uv.y < _Width / 2 && uv.z <  _Width / 2 ){
+	//	n = 1;
+	//}
+
+	float n = length(_Noise[uv].xyz);
+
+	
+	_Result[id.x + id.y * _Width + id.z * _Width * _Height] = n;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

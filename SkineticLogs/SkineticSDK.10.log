@@ -1,0 +1,21 @@
+[2025-10-19 10:50:07.672] [SkineticSDK] [info] [Skinetic] Command: connect(0, 0)
+[2025-10-19 10:50:07.674] [SkineticSDK] [info] [HIDStandalone] No device is available over USB. If it was expected to connect to one, make sure that: 
+	 - the board is turned on.
+	 - it is set to use plug to the computer.
+	 - the Operating System is not using the device as the default audio output device.
+	 - the device is not already in use by another application.
+[2025-10-19 10:50:08.682] [SkineticSDK] [info] [WIFIStandalone] No device is available over WiFi. If it was expected to connect to one, make sure that: 
+	 - the board is turned on.
+	 - it is set to use WiFi.
+	 - the WiFi settings are configured on the board.
+	 - it is connected to the WiFi and not still trying to connect to it.
+	 - the device is not already in use by another application.
+[2025-10-19 10:50:08.685] [SkineticSDK] [info] [BTStandalone] No device is available over Bluetooth. If it was expected to connect to one, make sure that: 
+	 - Bluetooth is enabled on your system.
+	 - the board is already paired with your system.
+	 - the board is turned on.
+	 - the board is set to use Bluetooth.
+	 - the board is not already in use by another application.
+[2025-10-19 10:50:08.685] [SkineticSDK] [info] [Sequencer] Connection routine terminated: no connectionCallback set.
+[2025-10-19 10:50:23.376] [SkineticSDK] [info] [Skinetic] Command: disconnectDevice()
+[2025-10-19 10:50:23.376] [SkineticSDK] [warning] [Handler] No device connected.

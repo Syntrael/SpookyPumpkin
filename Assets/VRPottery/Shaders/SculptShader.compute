@@ -1,0 +1,31 @@
+// Each #kernel tells which function to compile; you can have many kernels
+#pragma kernel CSMain
+
+// Create a RenderTexture with enableRandomWrite flag and set it
+// with cs.SetTexture
+RWTexture3D<float4> _Result;
+
+
+int _Size;
+
+float4x4 _ClayModelMatrix;
+
+float3 _BrushPalmLeftPosition;
+float3 _BrushPalmLeftNormal;
+float _BrushPalmLeftRadius;
+float _BrushPalmLeftStrength;
+bool _BrushPalmLeftAdditive;
+
+[numthreads(8,8,8)]
+void CSMain (uint3 id : SV_DispatchThreadID)
+{
+    float3 coord = mul(_ClayModelMatrix, float4(id.xyz, 1));
+    float3 pos = float3(coord.x - _Size/2, coord.y, coord.z - _Size / 2);
+     
+    float dist = length(pos - _BrushPalmLeftPosition) + 0.00001;
+    if(dist < _BrushPalmLeftRadius){
+        float strength = clamp(_BrushPalmLeftRadius/dist, 0.00001, 1);
+        //_Result[id.xyz] =  float4(0,0,0,0); // max(_Result[id.xyz] - float4(0.1,0.1,0.1), float4(0,0,0,0));
+        _Result[id.xyz] =  max(_Result[id.xyz] - (_BrushPalmLeftStrength * float4(strength, strength, strength, strength)), float4(0,0,0,0));
+    }
+}
